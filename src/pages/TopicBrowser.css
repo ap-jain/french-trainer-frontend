@@ -1,0 +1,119 @@
+.topic-browser { padding: var(--space-8) var(--space-6); max-width: 1000px; margin: 0 auto; }
+.topic-browser-header { margin-bottom: var(--space-6); }
+
+/* Level indicators */
+.level-indicators { display: flex; gap: var(--space-3); margin-bottom: var(--space-6); flex-wrap: wrap; }
+.level-indicator {
+  display: flex; align-items: center; gap: var(--space-2);
+  padding: var(--space-2) var(--space-4); border-radius: var(--radius-full);
+  background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle);
+  font-size: 0.8rem; font-weight: 600;
+}
+.level-indicator.locked { opacity: 0.5; }
+.level-indicator.active { border-color: var(--lc); background: rgba(255,255,255,0.06); }
+.li-dot { width: 8px; height: 8px; border-radius: 50%; }
+.li-label { color: var(--text-primary); }
+.li-soon { font-size: 0.65rem; color: var(--text-tertiary); font-style: italic; }
+
+/* Category tabs */
+.category-tabs {
+  display: flex; gap: var(--space-2); margin-bottom: var(--space-6);
+  padding-bottom: var(--space-4); border-bottom: 1px solid var(--border-subtle); flex-wrap: wrap;
+}
+.cat-tab {
+  display: flex; align-items: center; gap: var(--space-2);
+  padding: var(--space-3) var(--space-5); border-radius: var(--radius-md);
+  font-size: 0.85rem; font-weight: 600; color: var(--text-secondary);
+  border: 1px solid var(--border-subtle); transition: all var(--transition-fast);
+}
+.cat-tab:hover:not(:disabled) { color: var(--text-primary); background: rgba(255,255,255,0.05); border-color: var(--border-default); }
+.cat-tab.active { color: var(--text-primary); background: rgba(255,255,255,0.08); border-color: var(--cat-color); }
+.cat-tab:disabled { opacity: 0.4; cursor: not-allowed; }
+.cat-icon { font-size: 1.1rem; }
+.cat-label { font-size: 0.85rem; }
+.cat-soon { font-size: 0.6rem; padding: 2px 6px; background: rgba(255,255,255,0.08); border-radius: var(--radius-full); color: var(--text-tertiary); }
+
+/* Sections accordion */
+.curriculum-sections { display: flex; flex-direction: column; gap: var(--space-3); }
+
+.curriculum-section {
+  background: var(--gradient-card); border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg); overflow: hidden;
+  transition: border-color var(--transition-fast);
+}
+.curriculum-section:hover { border-color: var(--border-default); }
+
+.section-header {
+  width: 100%; display: flex; align-items: center; gap: var(--space-4);
+  padding: var(--space-5) var(--space-6); text-align: left;
+  color: var(--text-primary); cursor: pointer; transition: all var(--transition-fast);
+}
+.section-header:hover { background: rgba(255,255,255,0.03); }
+.section-header.expanded { background: rgba(61,79,245,0.05); border-bottom: 1px solid var(--border-subtle); }
+.section-icon { font-size: 1.4rem; }
+.section-info { flex: 1; display: flex; flex-direction: column; }
+.section-name { font-size: 1rem; font-weight: 700; }
+.section-name-fr { font-size: 0.75rem; color: var(--text-secondary); font-style: italic; }
+.section-count { font-size: 0.75rem; color: var(--text-tertiary); padding: var(--space-1) var(--space-3); background: rgba(255,255,255,0.05); border-radius: var(--radius-full); }
+.section-chevron { font-size: 0.7rem; color: var(--text-tertiary); transition: transform var(--transition-fast); }
+
+/* Topics inside sections */
+.section-topics { padding: var(--space-2) 0; }
+.topic-item { border-bottom: 1px solid var(--border-subtle); }
+.topic-item:last-child { border-bottom: none; }
+.topic-item.locked { opacity: 0.45; }
+
+.topic-header {
+  width: 100%; display: flex; align-items: center; gap: var(--space-3);
+  padding: var(--space-4) var(--space-6) var(--space-4) var(--space-10);
+  text-align: left; color: var(--text-primary); cursor: pointer;
+  transition: background var(--transition-fast);
+}
+.topic-header:hover:not(:disabled) { background: rgba(255,255,255,0.02); }
+.topic-header.expanded { background: rgba(255,255,255,0.03); }
+.topic-header:disabled { cursor: not-allowed; }
+.topic-icon-small { font-size: 1.1rem; }
+.topic-info { flex: 1; display: flex; flex-direction: column; }
+.topic-name { font-size: 0.9rem; font-weight: 600; }
+.topic-name-en { font-size: 0.7rem; color: var(--text-tertiary); }
+.coming-soon-badge { font-size: 0.65rem; color: var(--text-tertiary); padding: 2px 8px; background: rgba(255,255,255,0.05); border-radius: var(--radius-full); }
+.topic-mini-progress { display: flex; align-items: center; gap: var(--space-2); }
+.topic-mini-pct { font-size: 0.7rem; font-weight: 700; color: var(--text-accent); }
+.topic-chevron { font-size: 0.6rem; color: var(--text-tertiary); }
+
+/* Exercise list */
+.exercise-list { padding: var(--space-2) 0; background: rgba(0,0,0,0.15); }
+.exercise-item {
+  display: flex; align-items: center; gap: var(--space-3);
+  padding: var(--space-3) var(--space-6) var(--space-3) var(--space-16);
+  text-decoration: none; color: var(--text-secondary);
+  transition: all var(--transition-fast); font-size: 0.82rem;
+  border-left: 3px solid transparent;
+}
+.exercise-item:hover { background: rgba(255,255,255,0.03); color: var(--text-primary); border-left-color: var(--primary-500); }
+.exercise-item.completed { color: var(--text-success); }
+.exercise-number {
+  width: 22px; height: 22px; display: flex; align-items: center; justify-content: center;
+  border-radius: 50%; background: rgba(255,255,255,0.06); font-size: 0.65rem;
+  font-weight: 700; color: var(--text-tertiary); flex-shrink: 0;
+}
+.exercise-item.completed .exercise-number { background: rgba(16,185,129,0.15); color: var(--text-success); }
+.exercise-title { flex: 1; }
+.exercise-type-tag {
+  font-size: 0.6rem; padding: 2px 6px; border-radius: var(--radius-full);
+  background: rgba(61,79,245,0.1); color: var(--text-accent); font-weight: 600;
+  text-transform: uppercase;
+}
+.exercise-check { font-size: 0.8rem; }
+
+.topics-empty { text-align: center; padding: var(--space-16); color: var(--text-tertiary); }
+.topics-empty .empty-icon { font-size: 3rem; display: block; margin-bottom: var(--space-4); }
+
+@media (max-width: 768px) {
+  .topic-browser { padding: var(--space-4); }
+  .section-header { padding: var(--space-4); gap: var(--space-3); }
+  .topic-header { padding-left: var(--space-6); }
+  .exercise-item { padding-left: var(--space-10); }
+  .category-tabs { gap: var(--space-1); }
+  .cat-tab { padding: var(--space-2) var(--space-3); font-size: 0.75rem; }
+}

@@ -1,0 +1,53 @@
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-body {
+  display: flex;
+  flex: 1;
+}
+
+.app-main {
+  flex: 1;
+  min-height: calc(100vh - 60px);
+  overflow-y: auto;
+  background: var(--bg-primary);
+  position: relative;
+}
+
+/* Background decoration */
+.app-main::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(61, 79, 245, 0.04) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.app-main::after {
+  content: '';
+  position: fixed;
+  bottom: 0;
+  left: 240px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255, 189, 32, 0.03) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+@media (max-width: 768px) {
+  .app-main {
+    padding-bottom: 70px;
+  }
+
+  .app-main::after {
+    left: 0;
+  }
+}
